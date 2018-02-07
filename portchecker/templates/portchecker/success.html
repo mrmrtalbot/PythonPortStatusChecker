@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portchecker/style.css' %}"/>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <label> your ip is: {{ client_ip }}</label>
+    {{ form.as_p }}
+    <input type ="submit" value="Submit">
+</form>
+<h2>{{ text }}</h2>
+</body>
+</html>

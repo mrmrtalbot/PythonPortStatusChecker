@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- TODO Bootstrap integration, make things look pretty -->
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portchecker/style.css' %}"/>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <label> your ip is: {{ client_ip }}</label>
+    {{ form.as_p }}
+    <input type ="submit" value="Submit">
+</form>
+<h3><label>Port Name:</label>{{ text }}</h3>
+<h3><br /><label>Port Number:</label>{{ port_string }}</h3>
+<h3><br /><label>The Port is:</label>{{ nmap_result }}</h3>
+</body>
+</html>
